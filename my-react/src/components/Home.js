@@ -2,8 +2,11 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, enim. Eveniet corrupti cupiditate ex repellendus esse illum consectetur repellat dolore dicta eaque harum consequatur odit quas temporibus nisi, eum a! Excepturi in culpa doloremque earum! Quisquam deleniti dicta rem praesentium nisi dolorem quae consequatur ipsam, repellat nobis iure eligendi minus? A animi numquam fugit explicabo incidunt fugiat deserunt quis perferendis, corporis porro, quo quos, voluptates libero repellat. In ex quod itaque excepturi similique, odio dolorum laudantium quisquam nihil neque porro modi aperiam voluptatem id nam molestias eveniet dolores iusto sed ipsum. Dolor accusantium delectus neque nulla blanditiis quisquam quos suscipit?
+    <div className='text-black'>
+     <div className='flex flex-col text-center h-full max-w-[800px] mt-[90px] mx-auto justify-center'>
+      <p className='text-blue-600 font-bold p-2'>GROW WITH DATA ANALYTICS</p>
+      <h1 className='font-4xl md:text-7xl sm:text-6xl font-bold md:py-6'>Grow with data</h1>
+     </div>
     </div>
   )
 }

@@ -1,20 +1,30 @@
 // import logo from './logo.svg';
-import { Route, Routes } from 'react-router-dom';
+
+import { Link, Route, Routes } from 'react-router-dom';
+// import Navbar from './components/Navbar';
 import './App.css';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Test from './components/Test';
 
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Test />
+      <Test />
+      {/* <div>
+      <section className='h-96'>
+        <Navbar />
+      </section>
+      <section className='h-96' >parallax</section>
+      <section className='h-96'>Services</section>
+      <section className='h-96'>parallax</section>
+      <section className='h-96'>portfolio1</section>
+      <section className='h-96'>portfolio2</section>
+      <section className='h-96'>portfolio3</section>
+       <h1 className='h-96'>Contact</h1>
+        </div> */}
       <Routes>
-       <Route path='/Home' element={<Home />} />
-       <Route path='/Projects' element={<Projects />} />
-       <Route path='/Contact' element={<Contact />} />
+      <Route />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import Links from "./Links/Links";
 import ToggleButton from "./ToggleButtons/ToggleButton"
 
@@ -9,15 +9,14 @@ function Sidebar() {
 
   const variants = {
     open: {
-      clipPath: "circle(1200px at 50px 50px)",
+      clipPath: "circle(1000px at 50px 50px)",
       transition: {
         type: "spring",
         stiffness: 20,
-
       }
     },
     closed: {
-      clipPath: "circle(50px at 50px 50px)",
+      clipPath: "circle(700px at 50px 50px)",
       transition: {
         type: "spring",
         delay: 0.5,
@@ -29,7 +28,6 @@ function Sidebar() {
 
 
   return (
-
     <motion.div className='flex flex-col align-center justify-center bg-white text-pink' animate={open ? "open" : "closed"}>
       <motion.div className='fixed bottom-0 top-0 left-0 w-1/3 bg-white' variants={variants}>
         <Links />

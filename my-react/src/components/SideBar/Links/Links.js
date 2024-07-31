@@ -6,7 +6,7 @@ function links() {
 
   return (
     <div
-    className='m-2 text-red-800 absolute h-4 w-4 flex align-center justify-center flex-col gap-4'
+    className='m-2 text-red-800 absolute flex align-center justify-center flex-col gap-28'
     >
     {items.map((item) => (
       <a href= {`# ${item}`} key={item}>{item}</a>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const ToggleButton = ({}) => {
+const ToggleButton = () => {
 
     const [open, setOpen] = useState(false)
 
@@ -10,7 +10,12 @@ const ToggleButton = ({}) => {
            
         },
         closed:{
-          
+          clipPath: 'circle(30px at 50px 50px)',
+          transition:{
+            delay: 0.5,
+            dumping: 40,
+            stiffness: 400,
+          }
         },
     };
 

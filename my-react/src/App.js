@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 
 import { Link, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import './App.css';
 import Test from './components/Test';
 import Sidebar from './components/SideBar/Sidebar';
@@ -10,21 +10,20 @@ import Sidebar from './components/SideBar/Sidebar';
 function App() {
   return (
     <div>
-      <Navbar />
+      <section  id='homepage'>
+      {/* <Navbar /> */}
+      </section>
       <Sidebar />
       {/* <Test />
-      <Test />
+      <Test /> */}
       <div>
-      <section className='h-96'>
-      </section>
-      <section className='h-96' >parallax</section>
-      <section className='h-96'>Services</section>
-      <section className='h-96'>parallax</section>
-      <section className='h-96'>portfolio1</section>
-      <section className='h-96'>portfolio2</section>
-      <section className='h-96'>portfolio3</section>
-       <h1 className='h-96'>Contact</h1>
-        </div> */}
+      <section>HomePage</section>
+      <section id='services'>Services</section>
+      <section id='portfolio'>Portfolio</section>
+      <section id='contact'>Contact</section>
+      <section id='about'>About</section>
+      <section id='contact'>Contact</section>
+        </div>
       <Routes>
       <Route />
       </Routes>

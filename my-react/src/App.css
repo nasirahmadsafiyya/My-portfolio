@@ -10,7 +10,18 @@ html{
   scroll-behavior: smooth;
 }
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body{
   background: #0c0c1d;
   color: lightgray;
+}
+
+section{
+  height: 100vh;
+  scroll-snap-align: center;
 }

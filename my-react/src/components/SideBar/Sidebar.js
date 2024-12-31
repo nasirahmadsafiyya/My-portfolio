@@ -1,43 +1,46 @@
-import { React, useState } from 'react'
-import { motion } from "framer-motion";
-import Links from "./Links/Links";
-import ToggleButton from "./ToggleButtons/ToggleButton";
+import{ React, useState } from 'react';
+import { motion } from 'framer-motion';
+import Links from './Links/Links';
+import ToggleButton from './ToggleButtons/ToggleButton';
 
-const Sidebar = () => {
-
-  const [open, setOpen] = useState(false)
-
-  const variants = {
-
-    closed:{
-      clipPath: "circle(1200px at 50px 50px)",
-      transition:{
-        delay:1,
-        type:"spring",
-        stiffness: 20,
-        damping: 40,
-      }
+const variants ={
+  open:{
+    clipPath: 'circle(1000px at 50px 50px)',
+    transition:{
+      type:'spring',
+      delay: 0.3,
+      stiffness: 40,
+      damping: 20,
     },
-
-    open:{
-      // clipPath: "circle(700px at 50px 50px)",
-      // transition: {
-      //   delay: 0.9,
-      //   type: "spring",
-      //   stiffness: 40,
-      //   damping: 40,
-      // }
+  },
+  closed:{
+    clipPath: 'circle(25px at 30px 30px)',
+    transition:{
+      type:'spring',
+      stiffness: 40,
+      damping: 20,
+      delay:0.3,
     }
   }
-  return <motion.div className='sidebar flex flex-col align-middle justify-center bg-white text-black'
-    animate={open ? "open" : "closed"}>
-    
-      <motion.div className='bg fixed bottom-0 top-0 left-0 w-52 h-auto bg-white'
-      variants={variants }>
-        <Links />
-      </motion.div>
-      <ToggleButton setOpen={setOpen} />
-    </motion.div>
-  
 }
+
+const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className='relative z-10'>
+      <motion.div className='fixed bottom-0 top-0 left-0
+       bg-white z-10 w-60 flex flex-col justify-center 
+       items-center text-2xl'
+      variants={variants}
+      initial='closed'
+      animate={isOpen ? 'open' : 'closed'}>
+
+        <Links  />
+      </motion.div>
+      <ToggleButton isOpen={isOpen} setIsOpen={setIsOpen}/>
+    </div>
+  )
+}
+
 export default Sidebar

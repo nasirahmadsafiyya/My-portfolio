@@ -23,5 +23,107 @@ body{
 
 section{
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
 }
+
+.hero{
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+}
+
+.wrapper{
+  max-width: 1100px;
+  height: 100px;
+  margin: auto;
+}
+
+.text-container{
+  width: 50%;
+}
+
+.imageContainer{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.scrollImage{
+  width: 2.3rem;
+}
+
+.button{
+  border: 1px solid white;
+  border-radius: 0.6rem;
+  background: white;
+  color: #111132;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.slidingTextContainer{
+  font-size: 50vh;
+  width: 120%;
+
+}
+
+.parallax{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.mountains{
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+}
+.planets{
+  /* background-image: url('/planets.png'); */
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.stars{
+  background-size: cover;
+  background-position: bottom;
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.services{
+  background: linear-gradient(180deg, #111132, #0c0c1d,);
+}
+
+.services .titleContainer img{
+  width: 250px;
+  height: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.services .titleContainer .title{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+/* .services .listContainer{
+} */

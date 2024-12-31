@@ -1,28 +1,32 @@
-// import logo from './logo.svg';
-
-import { Link, Route, Routes } from 'react-router-dom';
-// import Navbar from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.css';
-import Test from './components/Test';
 import Sidebar from './components/SideBar/Sidebar';
+import Hero from './components/hero/Hero';
+import Parallax from './components/Parallax/Parallax';
+import Services from './components/Services/Services';
 
 
 function App() {
   return (
     <div>
-      <section  id='homepage'>
-      {/* <Navbar /> */}
+      <section id='HomePage'>
+      <Navbar  />
+      <Hero />
       </section>
       <Sidebar />
       {/* <Test />
       <Test /> */}
       <div>
-      <section>HomePage</section>
-      <section id='services'>Services</section>
-      <section id='portfolio'>Portfolio</section>
-      <section id='contact'>Contact</section>
-      <section id='about'>About</section>
-      <section id='contact'>Contact</section>
+      {/* <section id='HomePage'>HomePage</section> */}
+      <section id='Services'><Parallax type='Services'/></section>
+      <section><Services /></section>
+      <section id='Portfolio'><Parallax type='portfolio'/></section>
+      <section>Portfolio1</section>
+      <section>Portfolio2</section>
+      <section>Portfolio3</section>
+      <section id='Contact'>Contact</section>
+      <section id='About'>About</section>
         </div>
       <Routes>
       <Route />

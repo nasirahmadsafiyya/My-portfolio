@@ -48,7 +48,7 @@ const Hero = () => {
         <motion.h2 className='font-bold text-2xl text-purple-600 space-x-9' variants={textVariant}>SOPHY</motion.h2>
         <motion.h2 className='font-bold text-4xl' variants={textVariant}>WEB DEVELOPER AND CONTENT CREATOR</motion.h2>
         <motion.div className='buttons flex flex-row gap-3 m-3' variants={textVariant}>
-          <motion.button className='button' variants={textVariant}>See the latest works</motion.button>
+          <motion.button className='button font-semibold' variants={textVariant}>See the latest works</motion.button>
           <motion.button className='button' variants={textVariant}>Contact Me</motion.button>
         </motion.div>
       <motion.img className='scrollImage' src='/scroll.png' variants={textVariant} animate="scrollButton" alt='scroll' />

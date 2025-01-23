@@ -63,13 +63,12 @@ section{
   padding: 0.5rem;
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .slidingTextContainer{
   font-size: 50vh;
   width: 120%;
-
 }
 
 .parallax{
@@ -81,6 +80,10 @@ section{
 h1{
   font-size: 3rem;
   text-align: center;
+}
+
+h2 {
+  font-weight: 700;
 }
 
 .mountains{
@@ -113,17 +116,52 @@ h1{
 }
 
 .services .titleContainer img{
-  width: 250px;
-  height: 100px;
+  width: 200px;
+  height: 60px;
   border-radius: 50px;
   object-fit: cover;
 }
 
 .services .titleContainer .title{
   display: flex;
-  gap: 50px;
+  gap: 0.5rem;
   align-items: center;
 }
 
-/* .services .listContainer{
-} */
+.titleContainer .title .h2{
+  font-size: 50px;
+}
+
+.services .titleContainer button {
+  width: 200px;
+  height: 60px;
+  border-radius: 50px;
+  font-weight: 500;
+  background: orange;
+}
+
+.listContainer .box{
+  padding: 20px;
+  border: 0.5px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.listContainer .box button{
+  background: orange;
+  font-weight: 500;
+  border: none;
+}
+
+.contact .textContainer span{
+  font-weight: 300;
+}
+
+.contact .formContainer input, textarea{
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid white; 
+  color: white;
+  border-radius: 5px;
+}

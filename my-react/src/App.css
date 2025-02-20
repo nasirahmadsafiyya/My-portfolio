@@ -37,11 +37,18 @@ section{
 .wrapper{
   max-width: 1100px;
   height: 100px;
-  margin: auto;
 }
 
 .text-container{
   width: 50%;
+}
+
+.text-container .name{
+  letter-spacing: 30px;
+}
+
+.text-container .title{
+  letter-spacing: 5px;
 }
 
 .imageContainer{

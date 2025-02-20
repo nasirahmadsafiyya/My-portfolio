@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
+// import { useRef } from "react";
 import emailjs from '@emailjs/browser';
 
+emailjs.init("fteEwrEw59aMYjh1i")
 const variants = {
   initial: {
     y: 500,
@@ -18,29 +19,49 @@ const variants = {
   },
 };
 
-const Contact = () => {
-  const ref = useRef()
+function Contact() {
+
+  const ref = useRef();
   const formRef = useRef();
-  const [error, setError] = useState(null)
-  
-  const isInView = useInView(ref, {margin: "-100px"})
+  // const [error, setError] = useState(true)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  // const isInView = useInView(ref, {margin: "-100px"})
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_lxo4k2d', 'template_lsbq24j', formRef.current, {
+    emailjs.sendForm(
+      'service_lxo4k2d',
+      'template_9e0qn9n',
+      formRef.current, {
         publicKey: 'fteEwrEw59aMYjh1i',
       })
       .then(
-        (result) => {
+        (response) => {
+          console.log("Success!", response)
+          setSuccess(true)
           setError(false)
+          setFormData({name: "", email: "", message: ""});
         },
-        (error) => {
-          setError(true)
-          
+        (err) => {
+          console.log("EMAILJS ERROR:", err)
+          setError(true);
+          setSuccess(false);
         },
       );
+  };
+
+  const handleChange = (e)=> {
+    const {name, value } = e.target;
+    setFormData({...formData, [name]: value});
   };
 
   return (
@@ -73,7 +94,7 @@ const Contact = () => {
       </motion.div>
       <div className="formContainer flex-1 relative">
         <motion.div
-          className="phoneSvg stroke-orange-500 absolute m-auto"
+          className="phoneSvg stroke-orange-500 absolute m-auto pointer-events-none"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
           transition={{ delay: 1, duration: 1 }}
@@ -115,20 +136,21 @@ const Contact = () => {
           </motion.svg>
         </motion.div>
         <motion.form
-        onSubmit={sendEmail}
-          className="form flex flex-col gap-3"
-          ref={formRef}
+          className="form flex flex-col gap-3 z-10"
+          onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name" />
-          <input type="email" required placeholder="Email" name="email" />
-          <textarea rows={8} placeholder="Message" name="message" />
-          <button className="border-none p-2 bg-orange-500 rounded-md text-black">
+          <input type="text" placeholder="Name" name="name" onChange={handleChange} />
+          <input type="text" placeholder="Email" name="email" onChange={handleChange} />
+          <textarea type="text" rows={8} placeholder="Message" onChange={handleChange} />
+          <button type="submit" className="border-none p-2 bg-orange-500 rounded-md text-black">
             Send
           </button>
-          {error === false ? "Success" : "Error"}
+          {error && <span className="text-red-500">Failed to send message</span>}
+          {success && <span className="text-green-500">Message sent successfully</span>}
+          
         </motion.form>
       </div>
     </motion.div>

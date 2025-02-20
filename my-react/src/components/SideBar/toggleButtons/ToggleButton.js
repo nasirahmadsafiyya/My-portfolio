@@ -6,7 +6,7 @@ const ToggleButton = ({ isOpen, setIsOpen }) => {
 
   return (
     <motion.button
-      className='fixed top-4 left-3 text-black rounded-full cursor-pointer flex items-center justify-center z-20'
+      className='fixed top-12 left-6 text-black rounded-full cursor-pointer flex items-center justify-center z-20'
       onClick={() => setIsOpen(!isOpen)} // Toggle sidebar state
      
     >

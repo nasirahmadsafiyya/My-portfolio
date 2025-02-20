@@ -29,7 +29,7 @@ const Sidebar = () => {
 
   return (
     <div className='relative z-10'>
-      <motion.div className='fixed bottom-0 top-0 left-0
+      <motion.div className='fixed bottom-0 top-9 left-2
        bg-white z-10 w-60 flex flex-col justify-center 
        items-center text-2xl'
       variants={variants}

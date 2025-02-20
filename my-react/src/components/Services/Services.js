@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, isInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variants = {
   initial: {
@@ -23,12 +23,12 @@ const Services = () => {
 
   const ref = useRef()
 
-  const isInView = (ref,{margin:"-100px"})
+  // const isInView = (ref,{margin:"-100px"})
 
   return (
     <motion.div
-    className="services  flex flex-col justify-between gap-16"
-    variants={variants}
+      className="services flex flex-col justify-between gap-16"
+      variants={variants}
       initial="initial"
       whileInView="animate"
       ref={ref}
@@ -63,7 +63,7 @@ const Services = () => {
           </button>
         </div>
       </motion.div>
-      <motion.div variants={variants} className="listContainer flex-2 flex">
+      <motion.div variants={variants} className="listContainer flex-2 flex mx-20">
         <motion.div
           className="box"
           whileHover={{ background: "lightgrey", color: "black" }}
